@@ -13,9 +13,19 @@ body {
   font-family: 'Quicksand', sans-serif;
 }
 
+.body-bg {
+    background-color: rgba(30, 55, 53, 0.7);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 6;
+}
+
 .phone {
   position: relative;
-  width: 300px;
+  width: 320px;
   height: 500px;
   background-color: transparent;
   border-radius: 20px;
@@ -97,4 +107,42 @@ body {
       }
     }
   }
+}
+
+.modal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    max-width: 300px;
+    padding: 1.5rem;
+    background-color: #fff;
+    z-index: 7;
+    border-radius: 8px;
+    &-header {
+        border-bottom: 1px solid #000;
+        font-size: 1.5rem;
+        padding-bottom: 5px;
+    }
+    &-body {
+        font-size: 15px;
+        width: 100%;
+        padding: 10px 0;
+        h6 {
+            font-size: 1rem;
+            margin-top: 5px;
+        }
+    }
+    &-footer {
+        button{
+            background-color: #1abc9c;
+            color: #fff;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+    }
 }

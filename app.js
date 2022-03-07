@@ -11,11 +11,14 @@ var allSong = [
   },
 ];
 
+let bodyBg = document.querySelector('.body-bg');
+let modal = document.querySelector('.modal');
 let randomPlayButton = document.querySelector("#random");
 let previousButton = document.querySelector("#prev");
 let nextButton = document.querySelector("#next");
 let autoButton = document.querySelector("#auto");
 let playButton = document.querySelector("#play");
+let directPlay = document.querySelector('#directPlay');
 
 let durationRange = document.querySelector(".duration-range");
 let currentTime = document.querySelector(".time");
@@ -24,6 +27,12 @@ let audio = new Audio();
 let currentSong = 0;
 
 window.onload = playingSong;
+
+directPlay.addEventListener('click', function(){
+    modal.style.display = 'none';
+    bodyBg.style.display = 'none';
+    playingSong();
+});
 
 function playingSong() {
   audio.src = allSong[currentSong].songSrc;
