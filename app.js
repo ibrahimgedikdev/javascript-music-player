@@ -36,6 +36,7 @@ window.onload = playingSong;
 directPlay.addEventListener("click", function () {
   modal.style.display = "none";
   bodyBg.style.display = "none";
+  playButton.innerHTML = '<i class="fas fa-pause"></i>';
   playingSong();
 });
 
