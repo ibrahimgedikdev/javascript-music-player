@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: 0;
+          box-sizing: 0;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background-color: #d8deda;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.phone {
+  position: relative;
+  width: 300px;
+  height: 500px;
+  background-color: transparent;
+  border-radius: 20px;
+  -webkit-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin: 0 2%;
+  overflow: hidden;
+}
+
+.phone .phone-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.phone .phone-wrapper .music-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+.phone .phone-wrapper .song-body {
+  position: relative;
+  top: 50%;
+  color: #fff;
+  text-align: center;
+  z-index: 5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.phone .phone-wrapper .song-body .song-title {
+  font-size: 18px;
+  text-shadow: 2px 2px #000;
+  background-color: rgba(30, 55, 53, 0.5);
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.phone .phone-wrapper .song-body .song-title .song-artist {
+  font-weight: 600;
+}
+
+.phone .phone-wrapper .song-body .song-title .song-name {
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+.phone .phone-wrapper .song-body .time {
+  margin-top: 10px;
+  text-shadow: 2px 2px #000;
+  background-color: rgba(30, 55, 53, 0.5);
+  border-radius: 8px;
+  padding: 5px 10px;
+}
+
+.phone .phone-wrapper .song-body .song-duration {
+  margin: 20px 0;
+  height: 5px;
+  width: 90%;
+  max-width: 350px;
+  background: #1abc9c;
+  border-radius: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.phone .phone-wrapper .song-body .song-duration .duration-range {
+  width: 0;
+  height: 5px;
+  background: #fff;
+  border-radius: 50px;
+}
+
+.phone .phone-wrapper .song-body .song-control button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  margin: 10px;
+}
+
+.phone .phone-wrapper .song-body .song-control button i {
+  font-size: 25px;
+  color: #fff;
+}
+
+.phone .phone-wrapper .song-body .me {
+  color: #fff;
+  margin-top: 1rem;
+  font-size: 14px;
+}
+/*# sourceMappingURL=style.css.map */

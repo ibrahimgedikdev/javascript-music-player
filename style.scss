@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #d8deda;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.phone {
+  position: relative;
+  width: 300px;
+  height: 500px;
+  background-color: transparent;
+  border-radius: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin: 0 2%;
+  overflow: hidden;
+  .phone-wrapper {
+    width: 100%;
+    height: 100%;
+    .music-bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+    }
+    .song-body {
+      position: relative;
+      top: 50%;
+      color: #fff;
+      text-align: center;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      .song-title {
+        font-size: 18px;
+        text-shadow: 2px 2px #000;
+        background-color: rgba(30, 55, 53, 0.5);
+        padding: 5px 10px;
+        border-radius: 8px;
+        .song-artist {
+          font-weight: 600;
+        }
+        .song-name {
+          margin-top: 8px;
+          font-weight: 500;
+        }
+      }
+      .time {
+        margin-top: 10px;
+        text-shadow: 2px 2px #000;
+        background-color: rgba(30, 55, 53, 0.5);
+        border-radius: 8px;
+        padding: 5px 10px;
+      }
+      .song-duration {
+        margin: 20px 0;
+        height: 5px;
+        width: 90%;
+        max-width: 350px;
+        background: #1abc9c;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        .duration-range {
+          width: 0;
+          height: 5px;
+          background: #fff;
+          border-radius: 50px;
+        }
+      }
+      .song-control {
+        button {
+          cursor: pointer;
+          background: transparent;
+          border: none;
+          margin: 10px;
+          i {
+            font-size: 25px;
+            color: #fff;
+          }
+        }
+      }
+      .me {
+          color: #fff;
+          margin-top: 1rem;
+          font-size:14px;
+      }
+    }
+  }
+}
