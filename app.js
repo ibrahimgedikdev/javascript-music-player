@@ -62,7 +62,7 @@ audio.addEventListener("timeupdate", function () {
   convertTime(Math.round(audio.currentTime));
 
   if (audio.ended) {
-    nexSong();
+    
   }
 });
 
