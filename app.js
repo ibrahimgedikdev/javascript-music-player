@@ -27,6 +27,8 @@ var allSong = [
 
 let musicBg = document.querySelector(".music-bg");
 let songImg = document.querySelector(".song-img");
+let songArtist = document.querySelector('.song-artist');
+let songName = document.querySelector('.song-name'); 
 let randomPlayButton = document.querySelector("#random");
 let previousButton = document.querySelector("#prev");
 let nextButton = document.querySelector("#next");
@@ -45,30 +47,22 @@ let currentTime = document.querySelector(".time");
 let audio = new Audio();
 let currentSong = 0;
 
-let isPlaying = false
-
-window.onload = playingSong;
-
-audio.onplaying = function () {
-  isPlaying = true;
-};
-audio.onpause = function () {
-  isPlaying = false;
-};
+window.onload = function(){
+  audio.src = allSong[0].songSrc;
+  musicBg.src = allSong[0].songImg;
+  songImg.src = allSong[0].songImg;
+  songArtist.innerHTML = allSong[0].artist;
+  songName.innerHTML = allSong[0].song;
+}
 
 function playingSong() {
   audio.src = allSong[currentSong].songSrc;
   musicBg.src = allSong[currentSong].songImg;
   songImg.src = allSong[currentSong].songImg;
-
-  $(".song-artist").html(allSong[currentSong].artist);
-  $(".song-name").html(allSong[currentSong].song);
+  songArtist.innerHTML = allSong[currentSong].artist;
+  songName.innerHTML = allSong[currentSong].song;
   audio.play();
-  if(isPlaying == true){
-    playButton.innerHTML = '<i class="fas fa-pause"></i>'
-  } else {
-    playButton.innerHTML = '<i class="fas fa-play"></i>'
-  }
+  playButton.innerHTML = '<i class="fas fa-pause"></i>'
 }
 
 playButton.addEventListener("click", () => {
@@ -88,8 +82,15 @@ audio.addEventListener("timeupdate", function () {
   convertTime(Math.round(audio.currentTime));
 
   if (audio.ended) {
+    if (currentSong > allSong.length - 1) {
+      currentSong = 0;
+    } else {
+      currentSong++
+    }
   }
+  console.log(audio.currentTime);
 });
+
 
 function convertTime(seconds) {
   let min = Math.floor(seconds / 60);
@@ -111,17 +112,20 @@ function totalTime(seconds) {
   currentTime.textContent += " & " + min + ":" + sec;
 }
 
+
 nextButton.addEventListener("click", () => {
   currentSong++;
   if (currentSong > allSong.length - 1) {
     currentSong = 0;
   }
+console.log(currentTime);
+
 
   playingSong();
   playButton.innerHTML = '<i class="fas fa-pause"></i>';
 
-  $(".song-artist").html(allSong[currentSong].artist);
-  $(".song-name").html(allSong[currentSong].song);
+  songArtist.innerHTML = allSong[currentSong].artist;
+  songName.innerHTML = allSong[currentSong].song;
 });
 
 previousButton.addEventListener("click", () => {
@@ -133,8 +137,8 @@ previousButton.addEventListener("click", () => {
   playingSong();
   playButton.innerHTML = '<i class="fas fa-pause"></i>';
 
-  $(".song-artist").html(allSong[currentSong].artist);
-  $(".song-name").html(allSong[currentSong].song);
+  songArtist.innerHTML = allSong[currentSong].artist;
+  songName.innerHTML = allSong[currentSong].song;
 });
 
 allSong.forEach((music, index) => {
@@ -165,8 +169,8 @@ openLibraryBtn.addEventListener("click", function () {
       audio.src = allSong[index].songSrc;
       musicBg.src = allSong[index].songImg;
       songImg.src = allSong[index].songImg;
-      $(".song-artist").html(allSong[index].artist);
-      $(".song-name").html(allSong[index].song);
+      songArtist.innerHTML = allSong[index].artist;
+      songName.innerHTML = allSong[index].song;
       currentSong = index;
       audio.play();
       playButton.innerHTML = '<i class="fas fa-pause"></i>';
