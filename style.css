@@ -33,6 +33,8 @@ body {
   border: 3px solid #2c3e50;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
 }
 
 .phone .phone-wrapper {
